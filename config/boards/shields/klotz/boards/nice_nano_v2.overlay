@@ -22,10 +22,3 @@
         };
     };
 };
-
-
-/ {
-	chosen {
-		 zmk,backlight = &backlight;
-	};
-};
