@@ -47,13 +47,6 @@
     };
 
     behaviors {
-        td_mt: tap_dance_mod_tap {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_MOD_TAP";
-            #binding-cells = <0>;
-            tapping-term-ms = <180>;
-            bindings = <&mt LSHIFT T>, <&caps_word>;
-        };
         // Create custom behavior that is similar to the global `&mt`
         // configuration, but sets longer `tapping-term-ms`. This makes
         // it more difficult to trigger the hold behavior.
@@ -88,7 +81,7 @@ label= "BASE"                              ;
 // ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷
 
     &kp Q       &kp W       &kp F       &kp P       &kp G           &kp J       &kp L       &kp U       &kp Y       &kp SEMI
-    &lt_mt LGUI A  &mt LALT R  &mt LCTRL S &td_mt   &kp D           &kp M       &mt RSHFT N &mt RCTRL E &mt RALT I  &mt RGUI O
+    &lt_mt LGUI A &mt LALT R &mt LCTRL S &mt LSHIFT T &kp D         &kp M       &mt RSHFT N &mt RCTRL E &mt RALT I  &mt RGUI O
     &kp Z       &kp X       &kp C       &kp B       &kp V           &kp K       &kp H       &kp COMMA   &kp DOT     &kp FSLH
                                         &lt ETC SPACE  &lt NAV TAB      &lt SYM RET  &kp BSPC    
 
@@ -103,20 +96,20 @@ label= "BASE"                              ;
 label= "NAVI"                              ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 // ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-// ┃   P UP    ┃   C LOCK  ┃     UP    ┃  ZOOM OUT ┃  ZOOM IN  ┃   ┃     +     ┃     7     ┃     8     ┃     9     ┃  ESCAPE   ┃
+// ┃           ┃   C LOCK  ┃     UP    ┃  ZOOM OUT ┃  ZOOM IN  ┃   ┃     +     ┃     7     ┃     8     ┃     9     ┃  ESCAPE   ┃
 // ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-// ┃  P DOWN   ┃   LEFT    ┃    DOWN   ┃   RIGHT   ┃           ┃   ┃     -     ┃     4     ┃     5     ┃     6     ┃           ┃
+// ┃ CAPS WORD ┃   LEFT    ┃    DOWN   ┃   RIGHT   ┃           ┃   ┃     -     ┃     4     ┃     5     ┃     6     ┃   P UP    ┃
 // ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-// ┃  SHIFT    ┃           ┃   YT DEC  ┃  YT INC   ┃           ┃   ┃     *     ┃     1     ┃     2     ┃     3     ┃           ┃
+// ┃  SHIFT    ┃           ┃   YT DEC  ┃  YT INC   ┃           ┃   ┃     *     ┃     1     ┃     2     ┃     3     ┃  P DOWN   ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃           ┃           ┃   ┃  mo ADJ   ┃     0     ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷
 
-    &kp PG_UP   &kp CAPS    &kp UP   &kp LC(KP_MINUS) &kp LC(KP_PLUS) &kp KP_PLUS  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp ESC
-    &kp PG_DN   &kp LEFT    &kp DOWN      &kp RIGHT   &trans         &kp KP_MINUS    &kp KP_N4 &kp KP_N5  &kp KP_N6  &trans 
-    &kp LSHFT   &trans      &kp LS(COMMA) &kp LS(DOT) &trans         &kp KP_MULTIPLY &kp KP_N1 &kp KP_N2  &kp KP_N3  &trans
+    &trans      &kp CAPS    &kp UP   &kp LC(KP_MINUS) &kp LC(KP_PLUS) &kp KP_PLUS  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp ESC
+    &caps_word  &kp LEFT    &kp DOWN      &kp RIGHT   &trans        &kp KP_MINUS    &kp KP_N4 &kp KP_N5  &kp KP_N6  &kp PG_UP
+    &kp LSHFT   &trans      &kp LS(COMMA) &kp LS(DOT) &trans        &kp KP_MULTIPLY &kp KP_N1 &kp KP_N2  &kp KP_N3  &kp PG_DN
                                         &trans      &trans          &mo ADJ     &kp KP_N0  
 
                         >;
@@ -134,7 +127,7 @@ label= "SYM"                               ;
 // ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 // ┃     !     ┃     -     ┃     +     ┃     =     ┃     #     ┃   ┃     |     ┃     $     ┃     (     ┃     )     ┃     ?     ┃
 // ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-// ┃     ^     ┃     /     ┃     *     ┃     \     ┃     _     ┃   ┃     @     ┃     .     ┃     {     ┃     }     ┃     :     ┃
+// ┃     ^     ┃     /     ┃     *     ┃     \     ┃     _     ┃   ┃     :     ┃     .     ┃     {     ┃     }     ┃     @     ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃           ┃  mo ADJ   ┃   ┃           ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -143,7 +136,7 @@ label= "SYM"                               ;
 
     &kp TILDE   &kp LT      &kp GT      &kp DQT     &kp SQT         &kp GRAVE   &kp AMPS    &kp LBKT    &kp RBKT    &kp PRCNT     
     &kp EXCL    &kp MINUS   &kp PLUS    &kp EQUAL   &kp HASH        &kp PIPE    &kp DLLR    &kp LPAR    &kp RPAR    &kp QMARK 
-    &kp CARET   &kp FSLH    &kp ASTRK   &kp BSLH    &kp UNDER       &kp AT      &kp DOT     &kp LBRC   &kp RBRC   &kp COLON
+    &kp CARET   &kp FSLH    &kp ASTRK   &kp BSLH    &kp UNDER       &kp COLON   &kp DOT     &kp LBRC   &kp RBRC     &kp AT   
                                         &trans      &mo ADJ         &trans      &trans
 
                         >;
@@ -183,7 +176,7 @@ label= "ETC"                               ;
 // ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 // ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃
 // ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-// ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃
+// ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃     H     ┃    J      ┃     K     ┃     L     ┃
 // ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 // ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
