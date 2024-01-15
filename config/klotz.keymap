@@ -28,12 +28,12 @@
 &mt {
   global-quick-tap;
   flavor = "tap-preferred";
-  tapping-term-ms = <180>;
+  tapping-term-ms = <150>;
 };
 
 &lt {
   quick-tap-ms = <150>; // This allows the tapped key to be repeated.
-  tapping-term-ms = <180>;
+  tapping-term-ms = <150>;
 };
 
 / {
