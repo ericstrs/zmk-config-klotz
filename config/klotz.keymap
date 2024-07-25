@@ -197,7 +197,7 @@ label= "ETC"                               ;
 // ╷           ╷           ╷           ╷           ╷         ╷ ╷              ╷              ╷              ╷               ╷      ╷
 
     &trans      &trans      &trans      &trans      &trans      &msc MOVE_DOWN &mkp MB4       &mmv MOVE_UP    &mkp MB5        &trans
-    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHIFT  &trans      &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans          &trans
+    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHIFT  &trans      &trans         &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT  &trans
     &trans      &trans      &trans      &trans      &trans      &msc MOVE_UP   &trans         &mkp MB3        &trans          &trans
                                         &trans      &trans      &mkp MB1       &mkp MB2
                         >;
