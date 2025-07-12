@@ -26,8 +26,8 @@
 #define ADJ 3
 #define ETC 4
 
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1600  // 600
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 5     // 10
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1800  // 600
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 1     // 10
 
 // mouse movement
 &mmv {
