@@ -45,7 +45,7 @@
     device     = <&mmv>;
     fast {
         layers           = <FAST>;
-        input-processors = <&zip_xy_scaler 2 1>;
+        input-processors = <&zip_xy_scaler 4 1>;
     };
 };
 
