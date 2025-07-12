@@ -20,7 +20,7 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/mouse.h>
 
-#include <input/processors.dtsi>     /* gives you &zip_xy_scaler, &zip_temp_layer … */
+#include <input/processors.dtsi>
 #include <behaviors/mouse_keys.dtsi>
 
 #define BASE 0
@@ -40,6 +40,19 @@
     delay-ms = <0>;                   // 0
 };
 
+&mmv_input_listener {
+    compatible = "zmk,input-listener";
+    device     = <&mmv>;
+
+    input-processors = <&zip_xy_scaler 1 1>;
+
+    fast {
+        layers           = <FAST>;
+        input-processors = <&zip_xy_scaler 2 1>;
+    };
+};
+
+
 &msc {
   acceleration-exponent = <0>;          // 0
   time-to-max-speed-ms = <500>;         // 300
@@ -55,19 +68,6 @@
 &lt {
   quick-tap-ms = <150>; // This allows the tapped key to be repeated.
   tapping-term-ms = <150>;
-};
-
-/* listener swaps the scaler whenever the layer bit flips */
-&mmv_input_listener {
-    compatible = "zmk,input-listener";
-    device     = <&mmv>;
-
-    input-processors = <&zip_xy_scaler 1 1>;      /* default: no change */
-
-    turbo {
-        layers           = <FAST>;
-        input-processors = <&zip_xy_scaler 1.5 1>;  /* speed ×1.5 while layer on */
-    };
 };
 
 / {
