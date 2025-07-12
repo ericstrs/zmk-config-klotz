@@ -30,7 +30,7 @@
 #define ETC 4
 #define FAST 5
 
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1800  // 600
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 2800  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 1     // 10
 
 // mouse movement
